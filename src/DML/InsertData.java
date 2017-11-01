@@ -1,6 +1,8 @@
+package DML;
+
 import java.sql.*;
 
-public class JdbcInsertData {
+public class InsertData {
 
     public static void main(String[] args) throws SQLException {
         Connection myConn = null;
@@ -9,7 +11,7 @@ public class JdbcInsertData {
 
         try {
             // 1. Get a connection to database
-            myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo?useSSL=false", "student", "student");
+            myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/automation_practice?useSSL=false", "nmelnic", "nmelnic_root");
 
             System.out.println("Database connection successful!\n");
 
@@ -17,11 +19,11 @@ public class JdbcInsertData {
             myStmt = myConn.createStatement();
 
             // 3. Execute SQL query
-            myRs = myStmt.executeQuery("TBD");
+            myRs = myStmt.executeQuery("select * from Sales");
 
             // 4. Process the result set
             while (myRs.next()) {
-                System.out.println(myRs.getString("TBD") + ", " + myRs.getString("TBD"));
+                System.out.println(myRs.getString("ProductID") + ", " + myRs.getString("ModifiedDate"));
             }
         } catch (
                 Exception exc)
