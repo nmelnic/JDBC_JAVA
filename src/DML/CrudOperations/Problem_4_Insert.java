@@ -13,34 +13,39 @@ public class Problem_4_Insert {
         ResultSet myRs = null;
 
         try {
-
-            // 1. Load the properties file
+            // 1. DB CONNECTION
+            // 1.1. Load the properties file
             Properties props = new Properties();
             props.load(new FileInputStream("dbData.properties"));
 
-            // 2. Read the props
+            // 1.2. Read the props FROM the dbData.properties file
+            String theDbUrl = props.getProperty("dbUrl");
             String theUser = props.getProperty("user");
             String thePassword = props.getProperty("password");
-            String theDburl = props.getProperty("dburl");
 
-            System.out.println("Connecting to database...");
-            System.out.println("Database URL: " + theDburl);
-            System.out.println("User: " + theUser);
+            System.out.println("The user: " + "'" + theUser + "'" + " connects to: " + theDbUrl);
+            System.out.println("..............................................................");
 
-            // 3. Get a connection to database
-            myConn = DriverManager.getConnection(theDburl, theUser, thePassword);
+            // 1.3. Get a connection to database
+            myConn = DriverManager.getConnection(theDbUrl + "?useSSL=false", theUser, thePassword);
 
-            System.out.println("\nConnection successful!\n");
+            System.out.println("\nUser is being connected successfully!\n");
 
-            // 4. Create a statement
+            // 2. CREATE A STATEMENT
             myStmt = myConn.createStatement();
 
-            // 5. Execute SQL query
-            myRs = myStmt.executeQuery("select * from employees");
+            // 3. EXECUTE A SQL QUERY THAT INSERTS A NEW RECORD INTO THE SALES TABLE
+            myStmt.executeUpdate(
+                    "insert into Sales" + "(SalesOrderID,SalesOrderDetailID,OrderQty,ProductID, UnitPrice, UnitPriceDiscount, rowguid, ModifiedDate)" +
+                            "values " + "(26290,110567,1,905,140.90,0.00,'3','2017-08-11 00:00:00.000')"
+            );
 
-            // 6. Process the result set
+            // 4. VERIFY THIS BY GETTING THE EMPLOYEES LIST FROM THE SALES TABLE
+            myRs = myStmt.executeQuery("select * from Sales order by ModifiedDate");
+
+            // 5. PROCESS & DISPLAY THE RESULT SET
             while (myRs.next()) {
-                System.out.println(myRs.getString("last_name") + ", " + myRs.getString("first_name"));
+                System.out.println(myRs.getString("SalesOrderID") + ", " + myRs.getString("ModifiedDate"));
             }
 
         } catch (Exception exc) {
@@ -49,7 +54,7 @@ public class Problem_4_Insert {
             close(myConn, myStmt, myRs);
         }
     }
-
+    // 6. CLOSE ALL CONNECTIONS & BRIDGES
     private static void close(Connection myConn, Statement myStmt,
                               ResultSet myRs) throws SQLException {
         if (myRs != null) {
