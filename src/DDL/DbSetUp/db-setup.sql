@@ -15,7 +15,7 @@ CREATE TABLE `Sales` (
   `ModifiedDate` datetime NOT NULL
 );
 
-INSERT INTO `Sales` (`SalesOrderID`,`SalesOrderDetailID`,`OrderQty`,`ProductID`, `UnitPrice`, `UnitPriceDiscount`, `rowguid`, `ModifiedDate`) VALUES (26271,110562,1,836,356.89,0.00,'1','2008-06-01 00:00:00.000')
+INSERT INTO `Sales` (`SalesOrderID`,`SalesOrderDetailID`,`OrderQty`,`ProductID`, `UnitPrice`, `UnitPriceDiscount`, `rowguid`, `ModifiedDate`) VALUES (26271,110562,1,836,356.89,0.00,'1','2008-06-01 00:00:00.000');
 INSERT INTO `Sales` (`SalesOrderID`,`SalesOrderDetailID`,`OrderQty`,`ProductID`, `UnitPrice`, `UnitPriceDiscount`, `rowguid`, `ModifiedDate`) VALUES (26272,110563,1,822,356.89,0.00,'2','2008-06-01 00:00:00.000');
 INSERT INTO `Sales` (`SalesOrderID`,`SalesOrderDetailID`,`OrderQty`,`ProductID`, `UnitPrice`, `UnitPriceDiscount`, `rowguid`, `ModifiedDate`) VALUES (26273,110567,1,907,163.90,0.00,'3','2008-06-01 00:00:00.000');
 INSERT INTO `Sales` (`SalesOrderID`,`SalesOrderDetailID`,`OrderQty`,`ProductID`, `UnitPrice`, `UnitPriceDiscount`, `rowguid`, `ModifiedDate`) VALUES (26274,110616,4,905,218.45,0.00,'4','2008-06-01 00:00:00.000');
