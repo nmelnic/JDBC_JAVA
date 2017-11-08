@@ -1,8 +1,8 @@
-package DML;
+package DML.CrudOperations;
 
 import java.sql.*;
 
-public class InsertData {
+public class Problem_1_Read {
 
     public static void main(String[] args) throws SQLException {
         Connection myConn = null;
@@ -11,7 +11,9 @@ public class InsertData {
 
         try {
             // 1. Get a connection to database
-            myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/automation_practice?useSSL=false", "nmelnic", "nmelnic_root");
+            myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/automation_practice?useSSL=false",
+                                                "nmelnic",
+                                            "nmelnic_root");
 
             System.out.println("Database connection successful!\n");
 
@@ -19,11 +21,11 @@ public class InsertData {
             myStmt = myConn.createStatement();
 
             // 3. Execute SQL query
-            myRs = myStmt.executeQuery("select * from Sales");
+            myRs = myStmt.executeQuery("select * from Sales where OrderQty >= 2");
 
             // 4. Process the result set
             while (myRs.next()) {
-                System.out.println(myRs.getString("ProductID") + ", " + myRs.getString("ModifiedDate"));
+                System.out.println(myRs.getString("ProductID") + ", " + myRs.getString("OrderQty"));
             }
         } catch (
                 Exception exc)
