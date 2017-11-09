@@ -38,15 +38,15 @@ values (26271,110562,1,836,356.89,0.00,'1','2008-06-01 00:00:00.000'),
 
 Set up JDBC Driver
 
-MySQL: https://mvnrepository.com/artifact/mysql/mysql-connector-java/6.0.6
-MicrosoftSQL: https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc/6.1.0.jre8
-Set up JDK (http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-Set up an integrated development environment (IDE) on your preference, example IntelliJ IDEA (https://www.jetbrains.com/idea/download/#section=windows)
+- MySQL: https://mvnrepository.com/artifact/mysql/mysql-connector-java/6.0.6
+- MicrosoftSQL: https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc/6.1.0.jre8
+- Set up JDK (http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+- Set up an integrated development environment (IDE) on your preference, example IntelliJ IDEA (https://www.jetbrains.com/idea/download/#section=windows)
 
 Practice: CRUD operations using java
 
-Problem_1_Read: Create a method which will return result of any given Read query (select * from Sales where ..) taking into account that number of columns may vary.
-Problem_2_Update: Update table and double quantity of all orders.
-Problem_3_Delete: DELETE all rows with price less than 160.00.
-Problem_4 Insert: INSERT a new row with the following data (26280,110567,1,905,140.90,0.00,'3','2008-06-01 00:00:00.000').
-Problem_5_Bulk_insert: Create a CSV file (100 rows) with data and insert all data to "Sales" table using bulk insert.
+- Problem_1_Read: Create a method which will return result of any given Read query (select * from Sales where ..) taking into account that number of columns may vary.
+- Problem_2_Update: Update table and double quantity of all orders.
+- Problem_3_Delete: DELETE all rows with price less than 160.00.
+- Problem_4 Insert: INSERT a new row with the following data (26280,110567,1,905,140.90,0.00,'3','2008-06-01 00:00:00.000').
+- Problem_5_Bulk_insert: Create a CSV file (100 rows) with data and insert all data to "Sales" table using bulk insert.
