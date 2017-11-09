@@ -24,7 +24,7 @@ public class Problem_5_Bulk_Insert {
             //TODO: IMPLEMENT A METHOD THAT WILL DISPLAY THE RECORDS BEFORE AND AFTER INSERT OPERATION
 
             // 3. EXECUTE UPDATE OPERATION
-            myStmt.executeUpdate("update sales " + "set OrderQty = OrderQty + 5");
+            myStmt.executeUpdate("");
 
         } catch (Exception exc) {
             exc.printStackTrace();
