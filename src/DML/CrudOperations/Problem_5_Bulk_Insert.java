@@ -1,6 +1,11 @@
 package DML.CrudOperations;
 
-import java.sql.*;
+import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
 
 public class Problem_5_Bulk_Insert {
 
@@ -12,7 +17,11 @@ public class Problem_5_Bulk_Insert {
         String user = "nmelnic";
         String pass = "nmelnic_root";
 
+
         try {
+
+            Scanner readCSV = new Scanner(new FileReader("sales.csv"));
+
             // 1. GET A CONNECTION TO DATABASE
             myConn = DriverManager.getConnection(dbUrl, user, pass);
 
