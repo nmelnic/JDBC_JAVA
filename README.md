@@ -49,4 +49,4 @@ Practice: CRUD operations using java
 - Problem_2_Update: Update table and double quantity of all orders.
 - Problem_3_Delete: DELETE all rows with price less than 160.00.
 - Problem_4 Insert: INSERT a new row with the following data (26280,110567,1,905,140.90,0.00,'3','2008-06-01 00:00:00.000').
-- Problem_5_Bulk_insert: Create a CSV file (100 rows) with data and insert all data to "Sales" table using bulk insert. -> example: https://stackoverflow.com/questions/3635166/how-to-import-csv-file-to-mysql-table
+- Problem_5_Bulk_insert: Create a CSV file (100 rows) with data and insert all data to "Sales" table using bulk insert. -> Examples: https://stackoverflow.com/questions/3635166/how-to-import-csv-file-to-mysql-table, http://viralpatel.net/blogs/batch-insert-in-java-jdbc/
