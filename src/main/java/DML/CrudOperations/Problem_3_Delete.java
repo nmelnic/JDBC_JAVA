@@ -40,7 +40,7 @@ public class Problem_3_Delete {
             myStmt.executeUpdate("delete from Sales " + "where UnitPrice <= 218.45"); //TODO: 160.00 issue
 
             // 4. VERIFY THIS BY GETTING THE EMPLOYEES LIST FROM THE SALES TABLE
-            System.out.println("\nEmployess records after delete operation:\n");
+            System.out.println("\nEmployees records after delete operation:\n");
 
             myRs = myStmt.executeQuery("select * from Sales");
 
