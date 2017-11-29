@@ -1,11 +1,9 @@
 package DML.CrudOperations;
 
-import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
 
 public class Problem_5_Bulk_Insert {
 
@@ -17,10 +15,7 @@ public class Problem_5_Bulk_Insert {
         String user = "nmelnic";
         String pass = "nmelnic_root";
 
-
         try {
-
-            Scanner readCSV = new Scanner(new FileReader("sales.csv"));
 
             // 1. GET A CONNECTION TO DATABASE
             myConn = DriverManager.getConnection(dbUrl, user, pass);
@@ -30,10 +25,18 @@ public class Problem_5_Bulk_Insert {
             // 2. CREATE A STATEMENT
             myStmt = myConn.createStatement();
 
-            //TODO: IMPLEMENT A METHOD THAT WILL DISPLAY THE RECORDS BEFORE AND AFTER INSERT OPERATION
+            System.out.println("Inserting data into db....");
+            System.out.println("..........................");
+            System.out.println("..........................");
 
             // 3. EXECUTE UPDATE OPERATION
-            myStmt.executeUpdate("//TODO");
+            myStmt.executeUpdate(
+                    "LOAD DATA LOCAL INFILE 'C:/sales.csv'\n" +
+                            "INTO TABLE sales\n" +
+                            "FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'\n" +
+                            "LINES TERMINATED BY '\n'");
+
+            System.out.println("Data have been successfully inserted!");
 
         } catch (Exception exc) {
             exc.printStackTrace();
